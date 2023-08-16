@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon cheezycode.js ",
-    "build":"npm i && node cheezycode.js"
+    "start": "nodemon cheezycode.js "
+   
   },
   "author": "",
   "license": "ISC",
