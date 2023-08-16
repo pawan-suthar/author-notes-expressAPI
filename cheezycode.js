@@ -14,7 +14,15 @@ app.use(cors());
 
 mongoose
   .connect(
-    process.env.MONGO_URL
+    process.env.MONGO_URL,
+      {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+
+      }
+            
   )
   .then(() => {
     console.log("mongodb connected");
