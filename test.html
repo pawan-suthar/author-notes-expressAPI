@@ -35,9 +35,8 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       background-color: #fff;
       padding: 20px;
-      margin-left: 100px;
-      margin-right: 100px;
-      margin-top: 20px;
+      margin: 20px auto;
+      max-width: 800px;
       text-align: left;
     }
   </style>
@@ -48,27 +47,28 @@
     <div class="card">
       <h2>Create Author</h2>
       <p><strong>Endpoint:</strong> <code>POST /users/signup</code></p>
-      <div>format = 
-        {
-        "username":"Author name",
-        "email":"Author email",
-        "password":"PASS"
-      }
-    </div>
+      <p>Format:</p>
+      <pre>
+{
+  "username": "Author name",
+  "email": "Author email",
+  "password": "PASS"
+}
+      </pre>
     </div>
     <div class="card">
       <h2>Login</h2>
       <p><strong>Endpoint:</strong> <code>POST /users/signin</code></p>
-      <p><strong>Request:</strong> Attach authentication token</p>
+      <p><strong>Request:</strong> Attach authentication token in the Header section with key <code>Authorization</code> and value <code>Bearer "token"</code></p>
     </div>
     <div class="card">
       <h2>Create Note</h2>
       <p><strong>Endpoint:</strong> <code>POST /notes/</code></p>
-      <p><strong>Request:</strong> Attach authentication token of logged-in user</p>
+      <p><strong>Request:</strong> Attach authentication token of logged-in user in the Header section with key <code>Authorization</code> and value <code>Bearer "token"</code></p>
     </div>
     <div class="card">
       <h2>Delete Note</h2>
-      <p><strong>Endpoint:</strong> <code>DELETE /notes/</code></p>
+      <p><strong>Endpoint:</strong> <code>DELETE /notes/Attach note ID</code></p>
       <p><strong>Request:</strong> Attach note ID</p>
     </div>
     <div class="card">
