@@ -7,6 +7,7 @@ const notesRouter = require("./routes/notesrouter");
 const mongoose = require("mongoose");
 app.use(express.json());
 const dotenv = require('dotenv')
+const path = require("path")
 
 dotenv.config();
 const cors = require('cors')
@@ -28,7 +29,7 @@ mongoose
   });
 
 app.get("/", (req, res) => {
-  res.send("Notes Api in Express using MongoDb");
+  res.sendFile(path.join(__dirname,"test.html"))
 });
 app.use("/users", userRouter);
 app.use("/notes", notesRouter);
