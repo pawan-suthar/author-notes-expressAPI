@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "7f2bbfc9-3703-44c2-896d-9f5bd5b4542b",
+		"name": "Author-Notes-Express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16671987"
+	},
+	"item": [
+		{
+			"name": "create author",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"one\",\r\n  \"email\": \"one@gmail.com\",\r\n  \"password\": \"One@123\"\r\n}\r\n      ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/signup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login author",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"two\",\r\n  \"email\": \"two@gmail.com\",\r\n  \"password\": \"two@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/signin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create note",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhd2FuQGdtYWlsLmNvbSIsImlkIjoiNjRkYzdjOGJhNGZmYjM2ZmJlZDcxNjQ3IiwiaWF0IjoxNjkyMTcxNTc3fQ.bb6RRWSGLHhPKzfzga4JhV_cWjBWqa_RpBJywDJFqv0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\":\"title 1st\",\r\n  \"description\":\"description 1st\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/notes/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All notes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/notes/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update note",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRocmVlQGdtYWlsLmNvbSIsImlkIjoiNjRkY2E5NDA0Y2Y4ZjQxYTc1NTYyMGJlIiwiaWF0IjoxNjkyMTgyODQ4fQ.rY8S1p7O3-CIQywVuR5E_a5-TPnSrwaPJlvuQ0i9_6U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"title\": \"title 2nd updated\",\r\n        \"description\": \"description 2nd updated\"\r\n        \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/notes/64dca9cd4cf8f41a755620c4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						"64dca9cd4cf8f41a755620c4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete note",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/notes/<noteid>",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						"<noteid>"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
