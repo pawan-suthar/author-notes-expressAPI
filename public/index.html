@@ -1,18 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Methods</title>
-  </head>
-  <body>
-    <h1>Add a Book</h1>
-    <form action="/books" method="post">
-      <label for="title" id="title" name="title">title:</label>
-      <input type="text" name="title" id="title" required />
-      <label for="auth" id="auth" name="auth">author::</label>
-      <input type="text" name="auth" id="auth" required /><br />
-      <button style="margin-top: 20px" type="submit">add</button>
-    </form>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Author and Notes API - Express MongoDB</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      padding: 20px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      padding: 20px;
+      text-align: left;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .instructions-card {
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      padding: 20px;
+      margin: 10px auto;
+      max-width: 800px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>Author And Notes API using Express and MongoDB</h1>
+  <div class="grid">
+    <div class="card">
+      <h2>Create Author</h2>
+      <p><strong>Endpoint:</strong> <code>POST /users/signup</code></p>
+      <p>Format:</p>
+      <pre>
+{
+  "username": "Author name",
+  "email": "Author email",
+  "password": "PASS"
+}
+      </pre>
+    </div>
+    <div class="card">
+      <h2>Login</h2>
+      <p><strong>Endpoint:</strong> <code>POST /users/signin</code></p>
+      <p><strong>Request:</strong> Attach authentication token in the Header section with key <code>Authorization</code> and value <code>Bearer "token"</code></p>
+    </div>
+    <div class="card">
+      <h2>Create Note</h2>
+      <p><strong>Endpoint:</strong> <code>POST /notes/</code></p>
+      <p><strong>Request:</strong> Attach authentication token of logged-in user in the Header section with key <code>Authorization</code> and value <code>Bearer "token"</code></p>
+    </div>
+    <div class="card">
+      <h2>Delete Note</h2>
+      <p><strong>Endpoint:</strong> <code>DELETE /notes/Attach note ID</code></p>
+      <p><strong>Request:</strong> Attach note ID</p>
+    </div>
+    <div class="card">
+      <h2>Update Note</h2>
+      <p><strong>Endpoint:</strong> <code>PUT /notes/{noteID}</code></p>
+    </div>
+    <div class="card">
+      <h2>Get All Notes</h2>
+      <p><strong>Endpoint:</strong> <code>GET /notes/</code></p>
+    </div>
+  </div>
+  
+  <a href="https://documenter.getpostman.com/view/16671987/2s9Y5TyPsg#c285ddaa-c1de-46f9-97bb-58d98808fe60" target="_blank" rel="noopener noreferrer">API Documentation on Postman</a>
+  <div class="card instructions-card">
+    <h2>Testing API Endpoints</h2>
+    <p>To test the API endpoints, you can use tools like <strong>Postman</strong> and <strong>Thunder Client</strong> in Visual Studio Code:</p>
+    <ul>
+      <li><strong>Postman:</strong> Download and install <a href="https://www.postman.com/downloads/" target="_blank" rel="noopener noreferrer">Postman</a>. Create requests for each endpoint using the provided methods and paths.</li>
+      <li><strong>Thunder Client (VS Code Extension):</strong> If you're using Visual Studio Code, you can install the <a href="https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client" target="_blank" rel="noopener noreferrer">Thunder Client</a> extension. It's a lightweight REST client that you can use to send requests directly from VS Code.</li>
+    </ul>
+    <p>Remember to attach the required headers or tokens as mentioned in the endpoint descriptions.</p>
+  </div>
+</body>
 </html>
